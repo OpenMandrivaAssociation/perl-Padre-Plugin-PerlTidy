@@ -1,7 +1,7 @@
 
 %define realname   Padre-Plugin-PerlTidy
 %define version    0.05
-%define release    %mkrel 1
+%define release    %mkrel 2
 
 Name:       perl-%{realname}
 Version:    %{version}
