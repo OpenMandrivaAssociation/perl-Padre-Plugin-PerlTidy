@@ -1,9 +1,9 @@
 %define upstream_name    Padre-Plugin-PerlTidy
-%define upstream_version 0.10
+%define upstream_version 0.16
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 
 Summary:    Format perl files using Perl::Tidy
 License:    GPL+ or Artistic
@@ -12,6 +12,7 @@ Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/Padre/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires: perl(ExtUtils::MakeMaker)
+BuildRequires: perl(Module::Install)
 BuildRequires: perl(Padre)
 BuildRequires: perl(Perl::Tidy)
 BuildRequires: perl(Test::More)
@@ -26,16 +27,16 @@ This is a simple plugin to run Perl::Tidy on your source code.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-xvfb-run %{__perl} Makefile.PL INSTALLDIRS=vendor
-%make
+xvfb-run %{__perl} Build.PL installdirs=vendor
+./Build
 
 # no testing, wx fails with missing display
 #%check
-#make test
+#./Build test
 
 %install
 rm -rf %buildroot
-%makeinstall_std
+./Build install destdir=%{buildroot}
 
 %clean
 rm -rf %buildroot
