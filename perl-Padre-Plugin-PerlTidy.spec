@@ -1,15 +1,15 @@
 %define upstream_name    Padre-Plugin-PerlTidy
-%define upstream_version 0.16
+%define upstream_version 0.22
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	%perl_convert_version 0.22
+Release:	1
 
 Summary:	Format perl files using Perl::Tidy
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Padre/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Padre/Padre-Plugin-PerlTidy-0.22.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(ExtUtils::MakeMaker)
@@ -95,4 +95,5 @@ xvfb-run perl Build.PL installdirs=vendor
 
 * Tue Jan 13 2009 cpan2dist 0.02-1mdv
 - initial mdv release, generated with cpan2dist
+
 
