@@ -2,14 +2,14 @@
 %define upstream_version 0.22
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version 0.22
+Version:	%perl_convert_version %{upstream_version}
 Release:	1
 
 Summary:	Format perl files using Perl::Tidy
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Padre/Padre-Plugin-PerlTidy-0.22.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Padre/Padre-Plugin-PerlTidy-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(ExtUtils::MakeMaker)
