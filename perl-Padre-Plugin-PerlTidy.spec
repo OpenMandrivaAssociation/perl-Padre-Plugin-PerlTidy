@@ -1,15 +1,13 @@
 %define upstream_name    Padre-Plugin-PerlTidy
-%define upstream_version 0.22
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	4
+Version:	0.22
+Release:	5
 
 Summary:	Format perl files using Perl::Tidy
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://padre.perlide.org
-Source0:	https://cpan.metacpan.org/authors/id/A/AZ/AZAWAWI/Padre-Plugin-PerlTidy-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/A/AZ/AZAWAWI/Padre-Plugin-PerlTidy-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -25,7 +23,7 @@ BuildArch:	noarch
 This is a simple plugin to run Perl::Tidy on your source code.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 xvfb-run perl Makefile.PL INSTALLDIRS=vendor
@@ -73,8 +71,7 @@ xvfb-run perl Makefile.PL INSTALLDIRS=vendor
 * Thu Jun 18 2009 Jérôme Quelin <jquelin@mandriva.org> 0.70.0-1mdv2010.0
 + Revision: 386971
 - update to 0.07
-- using %%perl_convert_version
-- fix license tag
+- using %0.22 fix license tag
 
 * Thu May 21 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.06-1mdv2010.0
 + Revision: 378235
